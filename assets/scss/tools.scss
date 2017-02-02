@@ -1,0 +1,10 @@
+
+// == Fonts
+@mixin fontPage () {
+	font-family: 'Droid Sans', sans-serif;
+}
+
+@mixin fontBrand () {
+	font-family: 'Oswald', sans-serif;
+	font-weight: 200;
+}

@@ -1,0 +1,279 @@
+// ==== Containers
+.container {
+	
+	display: block;
+
+	width: 100%;
+
+	padding-left: $spacing-unit;
+	padding-right: $spacing-unit;
+
+	margin-right: auto;
+	margin-left: auto;	
+
+	&.--medium {
+		max-width: 1024px;
+	} 
+
+	&.--small {
+		max-width: 768px;
+	}
+
+	&.--margin {
+		
+		padding-left: $spacing-unit * 2;
+		padding-right: $spacing-unit * 2;
+
+	}
+
+}
+
+
+// ==== Form
+
+.input-group {
+
+	padding-left: 12px;
+	padding-right: 12px;
+
+	border: solid 1px #000000;
+	border-radius: 5px;
+
+
+	> .input, &:focus {
+		height: 40px;
+		width: 100%;
+	}
+
+	&.--input-icon {
+		
+		> .input {
+
+			width: calc(100% - 40px);
+			
+		}
+
+		> .icon {
+			display: inline;
+			color: $color-primary;
+			text-align: center;
+			font-size: 1.2em;
+			margin-right: 12px;
+
+		}
+
+		&::before {
+			content: "";
+			clear: left;
+		}
+	}	
+
+}
+
+// ==== Buttons
+
+.button {
+	
+	padding: 11.5px 22px;
+	border-radius: 5px;
+	border: solid 2px #000000;
+
+	cursor: pointer;
+	
+	&.--default {
+		
+		background-color: $color-primary;
+		border-color: $color-primary;
+		color: #FFFFFF;
+		text-transform: uppercase;
+
+	}
+
+	&:active {
+		box-shadow: none;
+		outline: none;
+	}
+
+}
+
+// ==== Brand
+
+.brand {
+	width: 247px; 
+
+	> .image {
+		position: relative;
+		width: 100%;
+	}
+}
+
+@media (max-width: 768px) {
+	.brand {
+		width: 200px; 
+	}
+}
+
+
+.main > .title {
+
+	font-size: 1.6em;
+	font-weight: 700;
+	margin-top: $spacing-unit * 2;
+	margin-bottom: $spacing-unit * 2;
+
+}
+
+
+@media (max-width: 1023px) {
+
+	.main > .title {
+
+		text-align: center;
+
+	}
+
+
+}
+
+// ====++ Cards
+.card {
+	
+	margin-bottom: $spacing-unit * 3;
+	transition-duration: 0.6s;
+	&:hover {
+		cursor: pointer;
+		transform: scale(1.05);
+		-moz-transform: scale(1.05);
+		-webkit-transform: scale(1.05);
+		-o-transform: scale(1.05);
+		transition-duration: 0.6s;
+	}
+	>.photo {
+		
+		width: 100%;  
+
+	}
+
+	>.product {
+		text-align: center;
+		font-weight: 700;
+
+		>.price {
+			color: $color-primary;
+			font-weight: 100;
+		}
+	}
+}
+
+
+// ====== MODAL
+
+.modal {
+	position: fixed;	
+	width: 100vw;
+	height: 100vh;
+	padding: $spacing-unit * 3;
+	overflow: hidden;
+	background-color: rgba(0,0,0, 0.8);
+	z-index: 997;
+	top: 0;
+	display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    opacity: 1;
+    transition-duration: 0.5s ease-in; 
+    	-webkit-transition-duration: 0.5s;
+			-moz-transition-duration: 0.5s; 
+    			-o-transition-duration: 0.5s;  
+
+    &.--hidden {
+    	display: none;
+    	opacity: 0;
+    	transition-duration: 0.5s ease-in; 
+    	-webkit-transition-duration: 0.5s;
+			-moz-transition-duration: 0.5s; 
+    			-o-transition-duration: 0.5s;
+    }
+
+	> .modal-content {
+		z-index: 998;
+		background-color: #FFFFFF; 
+		height: auto;
+		padding: $spacing-unit * 3;
+		position: relative;
+
+		> .close {
+			position: absolute;
+			top: $spacing-unit;
+			right: $spacing-unit;
+			color: #E4E4E4;
+			font-size: 1.2em;
+		}
+
+
+		> .image {
+
+			width: 50%;
+			float: left;
+			
+			> img{
+				width: 100%;
+			}
+		}
+
+		>.product {
+
+			>.title {
+				font-size: 1.2em;
+				font-weight: 700;
+			}
+
+			>.subtitle {
+				font-size: 0.9em;
+				font-weight: 600;
+				margin-top: $spacing-unit;
+				margin-bottom: $spacing-unit;
+
+				&.--not-margin {
+					margin-bottom: 0;
+				}
+			}
+
+			>.description {
+				font-size: 0.9em;
+				font-weight: 400;
+			}
+
+			>.price {
+				color: $color-primary;
+				font-weight: 700;
+			}
+
+			>.button {
+				margin-top: $spacing-unit;
+			}
+		}
+		
+	}
+}
+
+@media (max-width: 768px) {
+	.modal {
+		
+		padding: $spacing-unit;
+
+		> .modal-content {
+
+			>.image {
+					
+				width: 100%; 
+				text-align: center;
+				margin-bottom: $spacing-unit;
+			}
+
+		}
+	}
+}

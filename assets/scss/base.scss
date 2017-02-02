@@ -1,0 +1,19 @@
+html {
+	font-size: 16px;
+}
+
+body {
+	@include fontPage();
+	width: 100%;
+	overflow-x: hidden;
+
+}
+
+
+@media (max-width: 1024px) {
+	
+	html {
+		font-size: 14px;
+	}	
+	
+}
